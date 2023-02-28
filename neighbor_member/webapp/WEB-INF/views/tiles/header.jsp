@@ -40,7 +40,7 @@
 	  <tr valign="top">
 	    <td align="right">
 	    <!-- 로그인 x 상태  -->
-	 		<c:if test="${member_id==null}">
+	 		<c:if test="${member_id==null && admin_id==null}">
 			    <a href="${ctxpath}/member/loginForm.do">로그인</a>
 			    <a href="${ctxpath}/member/insertForm.do">회원가입</a>
     		</c:if>
@@ -51,15 +51,26 @@
 		    	${member_name}님 반갑습니다.
 			    <a href="${ctxpath}/member/logOut.do">로그아웃</a>
 			    <a href="javaScript:updateMember()">내정보변경</a>
-		    </c:if>
-    	</td>
-	  </tr>
-	</table>
+		   
+    	
+  </c:if>
+    <!-- admin 로그인 상태 -->
 	
+		    <c:if test="${admin_id!=null}">
+		    	${admin_name}님 반갑습니다.
+			    <a href="${ctxpath}/admin/logOut.do">로그아웃</a>
+			    <a href="">상품관리</a>
+		    </c:if>
+  
+ 
 	<form name="updateMember" method="post">
    <input type="hidden" name="member_id" value="${member_id}">
  </form>
  
- 
+
+	  </tr>
+	</table>
+	
+	 
 </body>
 </html>

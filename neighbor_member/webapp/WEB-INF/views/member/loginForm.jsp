@@ -22,7 +22,7 @@ function idpwCheck(){
 	}
 	
 	if(document.loginForm.member_pw.value==''){
-		alert("암호를 입력하세요.");
+		alert("비밀번호를 입력하세요.");
 		document.loginForm.member_pw.focus();
 		return false;
 	}
@@ -64,7 +64,7 @@ function idpwCheck(){
 	
 	<tr>
 		<td>
-			<input type="checkbox" name="rememberId" value="true" >아이디 저장
+			<input type="checkbox" name="rememberId" value="true" checked >아이디 저장
 			<a href="${ctxpath}/member/search_main.do">아이디/비밀번호 찾기</a>
 		</td>
 	</tr>

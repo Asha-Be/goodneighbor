@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>footer.jsp</title>
+<title>admin loginSuccess</title>
 </head>
 <body>
-<a href="${ctxpath}/admin/loginForm.do">관리자</a> 이 사이트는 무단으로 복제 하는 것을 금지합니다.
+	 <c:set var="admin_id" value="${dto.admin_id}" scope="session"/>
+	 <c:set var="admin_name" value="${dto.admin_name}" scope="session"/>
+	<meta http-equiv="Refresh" content="0;url=${ctxpath}">
 </body>
 </html>

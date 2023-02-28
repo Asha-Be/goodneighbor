@@ -142,6 +142,8 @@
 				<td class="dupcheck_class">
 					<input type="text" name="member_id" id="member_id" size="20" placeholder="6-12자의 영문 대소문자, 숫자">
 					<input type="button" value="ID중복 체크" id="dupcheck" onClick="confirmIdCheck();">
+				</td>
+				<td>
 					<span id="olmessage"></span>					
 				</td>
 			</tr>
@@ -150,6 +152,8 @@
 				<td>비밀번호</td>
 				<td>
 					<input type="password" name="member_pw" id="member_pw" size="30" placeholder="8~15자리의 영문 대소문자, 숫자, 특수문자" >				
+				</td>
+				<td>
 					<span id="password-error" style="color:red;"></span>
 				</td>
 			</tr>
