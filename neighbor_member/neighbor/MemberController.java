@@ -3,9 +3,7 @@ package com.good.neighbor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.Console;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
