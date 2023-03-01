@@ -25,10 +25,16 @@ public class NoticeController {
 	}
 	
 	@RequestMapping(value="/insertPro.do", method=RequestMethod.POST)
-	public String insertPro(NoticeDTO noticeDTO) {
-		
+	public String insertPro(NoticeDTO noticeDTO, HttpServletRequest request) {
+	    String fixed=request.getParameter("fixed");
+	    
+	    if(fixed == null){
 		sqlSession.insert("noticeDAO.insertNotice",noticeDTO);
-		
+		System.out.println("fixed(null):"+fixed);
+	    } else {
+	      sqlSession.insert("noticeDAO.fixNotice",noticeDTO);
+	      System.out.println("fixed:"+fixed);
+	    }
 		return "redirect:/notice/list.do";
 	}
 	
@@ -86,6 +92,7 @@ public class NoticeController {
 		}
 		int number=cnt-(curPage-1)*pt.getPageSize();
 		
+		List<NoticeDTO>fixlist=sqlSession.selectList("noticeDAO.selectFix");
 		
 		
 		model.addAttribute("number",number);
@@ -95,6 +102,7 @@ public class NoticeController {
 		model.addAttribute("pt",pt);
 		model.addAttribute("cnt",cnt);
 		model.addAttribute("list",list);
+		model.addAttribute("fixlist",fixlist);
 		
 		return ".main.notice.list";
 	}
@@ -170,7 +178,13 @@ public class NoticeController {
 	@RequestMapping(value="editPro.do", method=RequestMethod.POST)
 	public String editPro(NoticeDTO noticeDTO,HttpServletRequest request,Model model) {
 		String pageNum=request.getParameter("pageNum");
+		String fixed=request.getParameter("fixed");
+		if(fixed==null) {
 		sqlSession.update("noticeDAO.editNotice",noticeDTO);
+		} else {
+		  sqlSession.update("noticeDAO.updateFix",noticeDTO);
+		}
+		
 		model.addAttribute("pageNum",pageNum);
 		return "redirect:/notice/list.do";
 	}

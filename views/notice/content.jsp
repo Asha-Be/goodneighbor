@@ -43,7 +43,12 @@ margin: auto;
 	    <td colspan="2" align="center">
 	    [<a href="${ctxpath}/notice/list.do">리스트</a>]&nbsp;
 	    [<a href="${ctxpath}/notice/editForm.do?notice_number=${dto.notice_number}&pageNum=${pageNum}">글수정</a>]&nbsp;
+	    <c:if test="${dto.notice_fix==false}">
 	    [<a href="${ctxpath}/notice/deletePro.do?notice_number=${dto.notice_number}&pageNum=${pageNum}">글삭제</a>]&nbsp;
+	    </c:if>
+	    <c:if test="${dto.notice_fix==true}">
+	    [<a href="${ctxpath}/notice/deletePro.do?notice_number=${dto.notice_number}">글삭제</a>]&nbsp;
+	    </c:if>
 	    [<a href="${ctxpath}/notice/insertForm.do">글쓰기</a>]&nbsp;
 	  	</td>
 	  </tr>

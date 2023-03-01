@@ -32,6 +32,7 @@
 	  
 	  <tr>
 	    <td colspan="2" align="center">
+	    <input type="checkbox" name="fixed" value="1">게시물 고정하기<br>
 	    <input type="submit" value="글쓰기">
 	    <input type="button" value="취소" onClick="location='${ctxpath}/notice/list.do'">
 	    </td>

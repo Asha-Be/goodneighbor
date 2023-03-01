@@ -54,7 +54,6 @@ if(request.getParameter("keyword")!=null){
 	</c:if>
 	
 	<c:if test="${pt.cnt>0}">
-	
 	<table border="1">
 	  <tr>
 	    <th>글번호</th>
@@ -63,8 +62,37 @@ if(request.getParameter("keyword")!=null){
 	    <th>작성일</th>
 	    <th>조회수</th>
 	  </tr>
-	
+	 
+	 <c:forEach var="dto" items="${fixlist}">
+	  <c:if test="${dto.notice_fix ==true}">
+	  <tr>
+	   <td align="center">
+	     <img alt="공지" src="${ctxpath}/resources/imgs/notice.jpg" width="50" height="50">
+	   </td>
+	   
+	   <td>
+	   <a href="${ctxpath}/notice/content.do?notice_number=${dto.notice_number}">
+	   ${dto.notice_title}
+	   </a>
+	   </td>
+	   
+	   <td>
+	    ${dto.notice_writer}
+	   </td>
+	   
+	   <td>
+	    <fmt:formatDate value="${dto.notice_regdate}" pattern="yyyy/MM/dd"/>
+	   </td>
+	   
+	   <td>
+	  	  ${dto.notice_readcount}
+	   </td>
+	   </tr>
+	  </c:if>	
+	 </c:forEach>
+
 	  <c:forEach var="dto" items="${list}">
+	  <c:if test="${dto.notice_fix==false}">
 	  	<tr>
 	  	  <td>
 	  	  ${number}
@@ -88,8 +116,8 @@ if(request.getParameter("keyword")!=null){
 	  	  <td>
 	  	  ${dto.notice_readcount}
 	  	  </td>
-	  	  
 	  	</tr>
+	  </c:if>
 	  </c:forEach>
 	</table>
 	</c:if>
@@ -102,7 +130,7 @@ if(request.getParameter("keyword")!=null){
 		        <option value="notice_content">글내용</option>
 		      </select>
 		      <input type="text" name="keyword" size="16">
-		      <input type="hidden" name="pageNum" value="${pageNum}">
+		      <input type="hidden" name="pageNum" value="1">
 		      <input type="button" value="search" onClick="javaScript:check()">
 		    </td>
 		  </tr>
@@ -111,7 +139,7 @@ if(request.getParameter("keyword")!=null){
 	<table>
 	  <tr align="center">
 	    <td>
-	      <c:if test="${pt.cnt>0 }">
+	      <c:if test="${pt.cnt>0}">
 	        <!-- 이전블럭 -->
 	        <c:if test="${pt.startPage>10 }">
 	          [<a href="${ctxpath}/notice/list.do?pageNum=${pt.startPage-10}">이전블럭</a>]

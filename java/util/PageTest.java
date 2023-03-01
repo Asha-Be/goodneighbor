@@ -71,21 +71,12 @@ public class PageTest {
 		
 		this.startPage = (int)(curPage/pageBlock)*10+1;//시작 페이지
 		this.endPage = startPage+pageBlock-1;//끝 페이지
-		this.skip=(int)(curPage-1)*pageSize;
 		
 		//if(currentPage%pageBlock==0 && currentPage>=pageBlock) {
 	                    //startPage=currentPage-9;
 		//}
 	}//생성자-end
 	
-	public void setCurPage(int curPage) {
-		if(curPage <= 0) { //현재 페이지가 0이하로 되면 1로 설정
-			this.curPage=1;
-		}else {
-			this.curPage=curPage;
-		}
-		this.skip = (this.curPage-1)*amount; //pageSize대신 amount 사용
-	}
 	public int getPageSize() {
 		return pageSize;
 	}

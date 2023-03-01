@@ -17,7 +17,9 @@
 		  <td>글제목</td>
 		  <td><input type="text" name="notice_title" id="title" value="${dto.notice_title}">
 		  <input type="hidden" name="notice_number" value="${dto.notice_number}">
+		  <c:if test="${dto.notice_fix==false}">
 		  <input type="hidden" name="pageNum" value="${pageNum}">
+		  </c:if>
 		  </td>
 		</tr>
 		
@@ -29,6 +31,12 @@
 		</tr>
 		<tr>
 		  <td colspan="2" align="center">
+		  <c:if test="${dto.notice_fix==true}">
+		  <input type="checkbox" name="fixed" checked>게시물 상단고정<br>
+		  </c:if>
+		  <c:if test="${dto.notice_fix==false}">
+		  <input type="checkbox" name="fixed">게시물 상단고정<br>
+		  </c:if>
 		  <input type="submit" value="글수정">
 		  <input type="button" value="취소" onClick="location='${ctxpath}/notice/list.do'">
 		  </td>

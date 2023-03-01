@@ -21,13 +21,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<select id="selectNotice" resultType="noticeDTO">
 	select * from notice
+	where notice_fix=0
 	order by notice_number desc
 	limit #{start},#{count}
 	</select>
 	
 	<select id="searchNotice" parameterType="java.util.Map" resultType="noticeDTO">
 	select * from notice
-	where ${columnParam} LIKE '%${keyword}%'
+	where notice_fix=0 and ${columnParam} LIKE '%${keyword}%'
 	order by notice_number desc
 	limit #{start}, #{count}
 	</select>
@@ -35,7 +36,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="readCnt" parameterType="int">
 	update notice set
 	notice_readcount=notice_readcount+1
-	where notice_number=#{noitce_number}
+	where notice_number=#{notice_number}
 	</update>
 	
 	<select id="oneNotice" parameterType="int" resultType="noticeDTO">
@@ -45,7 +46,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<update id="editNotice" parameterType="noticeDTO">
 	update notice set
-	notice_title=#{notice_title},notice_content=#{notice_content}
+	notice_title=#{notice_title},notice_content=#{notice_content},
+	notice_fix=0
 	where notice_number=#{notice_number}
 	</update>
 	
@@ -54,4 +56,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	where notice_number=#{notice_number}
 	</delete>
 	
+	<insert id="fixNotice" parameterType="noticeDTO">
+	insert into notice(notice_number,notice_writer,notice_title,notice_content,notice_regdate,notice_fix)
+	values(0,#{notice_writer},#{notice_title},#{notice_content},NOW(),1)
+	</insert>
+	
+	<select id="selectFix" resultType="noticeDTO">
+	select * from notice
+	where notice_fix=1 order by notice_regdate desc
+	limit 0,3
+	</select>
+	
+	<update id="updateFix" parameterType="noticeDTO">
+	update notice set
+	notice_title=#{notice_title},notice_content=#{notice_content},
+	notice_fix=1 where notice_number=#{notice_number}
+	</update>
 </mapper>
