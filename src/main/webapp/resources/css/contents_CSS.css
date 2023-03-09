@@ -1,0 +1,108 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'KOHINanumOTFL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/KOHINanumOTFL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+<!--
+#subject {
+	 font-family: 'LINESeedKR-Bd';
+	 font-size: 37px;
+	 text-align : left;
+	padding-bottom: 25px;
+	padding-top: 50px;
+	padding-left: 20px;
+	margin-left : 50px;
+	height : 200px;
+	
+	
+}
+
+
+#content{  
+	font-family: 'Pretendard-Regular';
+	
+	height : 50%;
+	width : 800px;
+	padding-left : 30px;
+	padding-top : 25px;
+	padding-right : 30px;
+	padding-bottom : 30px;
+	box-sizing: border-box;
+
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
+  	padding-top:10px;
+	padding-bottom:30px;
+	padding-left:10px;
+  
+  line-height: 20px;
+}
+
+#contentTable{
+	
+	width:1100x;
+	  font-family: 'Pretendard-Regular';
+
+	 margin-top : 50px;
+}
+
+#writer {
+	width : 200px;
+}
+#contentTable{
+
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:10px;
+  
+  line-height: 20px;
+  border-bottom: 1px dotted #c4c4c4;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+
+#content_content{
+	padding-right:30px;
+	padding-left:10px;
+	
+	
+}
+
+#content_row{
+	width:100px;
+	text-align:center;
+}
+
+#buttons{
+		margin-bottom : 50px;
+}
+
+
+-->
+
+
+

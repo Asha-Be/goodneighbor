@@ -1,0 +1,105 @@
+@CHARSET "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'KOHINanumOTFL';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/KOHINanumOTFL.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LINESeedKR-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.member{
+	 font-family: 'KOHINanumOTFL';
+	font-size : 30px;
+	color: #3CB371;
+}
+
+.admin{
+	font-size : 30px;
+	color: #3CB371;
+	 font-family: 'LINESeedKR-Bd';
+	padding-top: 80px;
+}
+input[type=text] {
+	
+	padding : 20;
+	width: 400px;
+	height: 50px;
+	 font-size: 17px;
+	 text-align: left;
+	 font-family: 'Pretendard-Regular';
+}
+
+input[type=password] {
+	
+	padding : 20;
+	width: 400px;
+	height: 50px;
+	margin-top : 10px;
+	 font-size: 17px;
+	 text-align: left;
+	 margin-bottom:25px;
+	font-family: 'Pretendard-Regular';
+}
+
+.submit_id{
+	
+	
+ 	padding-top : 20px;
+	
+}
+
+
+
+#submit_button {
+	width : 400px;
+	height : 50px;
+	background-color: #3CB371;
+	border-radius: 5px;
+	border : 0px;
+	margin-top : 10px;
+	color : white;
+	font-size: 18px;
+	font-family: 'Pretendard-Regular';
+	margin-bottom:1px;
+	
+}
+#no_member{
+	margin-top:10px;
+	
+	font-family: 'KOHINanumOTFL';
+}
+
+#save_search{
+	
+	font-family: 'Pretendard-Regular';
+	padding:20px;
+	
+}
+
+input[type=button]{
+	width : 400px;
+	height : 50px;
+	border-radius: 5px;
+	margin-top : 10px;
+	font-size: 18px;
+	border : 0px;
+	font-family: 'Pretendard-Regular';
+	
+}
+
+table{
+	margin:auto;
+}

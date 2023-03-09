@@ -1,0 +1,31 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+input[type=button]{
+	width : 400px;
+	height : 50px;
+	border-radius: 5px;
+	margin-top : 13px;
+	font-size: 18px;
+	border : 0px;
+	font-family: 'Pretendard-Regular';
+	align:center;
+	
+}
+
+.buttons{
+	padding-top: 80px;
+	
+	align:center;
+}
+
+#div_button{
+	
+	align:center;
+}
